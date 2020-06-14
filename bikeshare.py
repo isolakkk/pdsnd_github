@@ -61,7 +61,7 @@ def get_month():
         month_input = input('\nWhich month? January, February, March, April,'
                             ' May, or June?\n')
         if month_input.lower() not in months_dict.keys():
-            print('Sorry, I do not understand your input. Please type in a '
+            print('Sorry,do not understand your input. Please type in a '
                   'month between January and June')
     month = months_dict[month_input.lower()]
     return ('2017-{}'.format(month), '2017-{}'.format(month + 1))
