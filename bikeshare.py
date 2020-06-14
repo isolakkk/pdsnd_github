@@ -4,7 +4,7 @@ from datetime import datetime
 from datetime import timedelta
 import time
 
-## Filenames
+## Files that are used in this project:
 #chicago = 'chicago.csv'
 #new_york_city = 'new_york_city.csv'
 #washington = 'washington.csv'
@@ -76,7 +76,7 @@ def get_day():
     this_month = get_month()[0]
     month = int(this_month[5:])
     valid_date = False
-    while valid_date == False:    
+    while valid_date == False:
         is_int = False
         day = input('\nWhich day? Please type your response as an integer.\n')
         while is_int == False:
@@ -120,7 +120,7 @@ def popular_day(df):
     most_pop_day = days_of_week[index]
     print('The most popular day of week for start time is {}.'.format(most_pop_day))
 
-    
+
 def popular_hour(df):
     '''Finds and prints the most popular hour of day for start time.
     Args:
@@ -208,7 +208,7 @@ def gender(df):
     print('There are {} male users and {} female users.'.format(male_count, female_count))
 
 def birth_years(df):
-    ''' Finds and prints the earliest (i.e. oldest user), most recent (i.e. 
+    ''' Finds and prints the earliest (i.e. oldest user), most recent (i.e.
         youngest user), and most popular birth years.
     Args:
         bikeshare dataframe
@@ -282,18 +282,18 @@ def statistics():
     city = get_city()
     print('Loading data...')
     df = pd.read_csv(city, parse_dates = ['Start Time', 'End Time'])
-    
+
     # change all column names to lowercase letters and replace spaces with underscores
     new_labels = []
     for col in df.columns:
         new_labels.append(col.replace(' ', '_').lower())
     df.columns = new_labels
-    
+
     # increases the column width so that the long strings in the 'journey'
     # column can be displayed fully
     pd.set_option('max_colwidth', 100)
-    
-    # creates a 'journey' column that concatenates 'start_station' with 
+
+    # creates a 'journey' column that concatenates 'start_station' with
     # 'end_station' for the use popular_trip() function
     df['journey'] = df['start_station'].str.cat(df['end_station'], sep=' to ')
 
@@ -312,19 +312,19 @@ def statistics():
 
     if time_period == 'none':
         start_time = time.time()
-        
+
         # What is the most popular month for start time?
         popular_month(df_filtered)
         print("That took %s seconds." % (time.time() - start_time))
         print("\nCalculating the next statistic...")
-    
+
     if time_period == 'none' or time_period == 'month':
         start_time = time.time()
-        
+
         # What is the most popular day of week (Monday, Tuesday, etc.) for start time?
         popular_day(df_filtered)
         print("That took %s seconds." % (time.time() - start_time))
-        print("\nCalculating the next statistic...")    
+        print("\nCalculating the next statistic...")
         start_time = time.time()
 
     # What is the most popular hour of day for start time?
@@ -354,11 +354,11 @@ def statistics():
     # What are the counts of each user type?
     users(df_filtered)
     print("That took %s seconds." % (time.time() - start_time))
-    
+
     if city == 'chicago.csv' or city == 'new_york_city.csv':
         print("\nCalculating the next statistic...")
         start_time = time.time()
-        
+
         # What are the counts of gender?
         gender(df_filtered)
         print("That took %s seconds." % (time.time() - start_time))
