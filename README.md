@@ -13,6 +13,6 @@ new_york_city.csv ,
 chicago.csv ,
 
 ### Credits
-Turkcell
-Udacity
+Turkcell ,
+Udacity , 
 https://medium.com/@steveamaza/how-to-write-a-proper-git-commit-message-e028865e5791
