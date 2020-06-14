@@ -5,7 +5,7 @@ Created on 14.06.2020
 Bikeshare Project
 
 ### Description
-This project is to understand bikeshare data in Chicago, New York City and Washington. Pandas and Numpy were imported and used to analyze the data and find out the detailed information regarding the most frequent times of travel,the most popular stations and trip,the total and average trip duration, etc.
+This is a Project to understand bikeshare data in Chicago, New York City and Washington. Pandas and Numpy were imported and used to analyze the data and find out the detailed information regarding the most frequent times of travel,the most popular stations and trip,the total and average trip duration, etc.
 
 ### Files used
 washington.csv
@@ -14,4 +14,3 @@ chicago.csv
 
 ### Credits
 Turkcell-Udacity
-Udacity
