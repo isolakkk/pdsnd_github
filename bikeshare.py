@@ -186,7 +186,7 @@ def popular_trip(df):
     print('The most popular trip is {}.'.format(most_pop_trip))
 
 def users(df):
-    '''Finds and prints the counts of each user type.
+    '''Finds and prints the counts each type of user.
     Args:
         bikeshare dataframe
     Returns:
